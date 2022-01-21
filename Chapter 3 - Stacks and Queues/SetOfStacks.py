@@ -1,6 +1,4 @@
-
-
-class SetOfStacks():
+class SetOfStacks:
     def __init__(self):
         self.stack_list = []
         self.current_stack = Stack()
@@ -12,7 +10,7 @@ class SetOfStacks():
             out += "\n"
         return out
 
-    def push(self,new_node):
+    def push(self, new_node):
         if self.current_stack.getSize() == 5:
             new_stack = Stack()
             new_stack.push(new_node)
@@ -23,9 +21,9 @@ class SetOfStacks():
             self.stack_list.append(self.current_stack)
         else:
             self.current_stack.push(new_node)
-            self.stack_list[len(self.stack_list)-1] = self.current_stack
+            self.stack_list[len(self.stack_list) - 1] = self.current_stack
 
-    def popAt(self,index):
+    def popAt(self, index):
         if self.stack_list[index].isEmpty():
             raise Exception("Attempting to pop from empty stack")
         self.stack_list[index].pop()
@@ -36,7 +34,8 @@ class Node:
         self.value = value
         self.next = None
 
-class Stack():
+
+class Stack:
     def __init__(self):
         self.head = None
         self.size = 0
@@ -52,7 +51,7 @@ class Stack():
 
     def getSize(self):
         return self.size
-    
+
     def isEmpty(self):
         return self.size == 0
 
@@ -77,6 +76,7 @@ class Stack():
         self.head = self.head.next
         self.size -= 1
         return popped_node.value
+
 
 node1 = Node(10)
 node2 = Node(12)
